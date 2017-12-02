@@ -6,7 +6,7 @@ import javax.swing.*;
 public class VistaBibliotecaU extends JFrame {
 	
 	//Attributos
-	//Prueba :)
+	//Prueba 2 :(
 	//JLabel
 	
 	//JButton
