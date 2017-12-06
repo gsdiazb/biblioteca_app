@@ -1,4 +1,0 @@
-Rojas,48,Wilson,Masculino
-Rojas,7,Sofia,Femenino
-Rodriguez,67,Carlos,Masculino
-Peña,6,Rocio,Femenino

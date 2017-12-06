@@ -5,6 +5,8 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 import entity.Biblioteca;
 import view.VistaLogin;
+import view.VistaBibliotecaU;
+import controller.ControllerLogin;
 
 public class StartTest {
 	
@@ -17,10 +19,12 @@ public class StartTest {
 		} catch (InstantiationException e) {
 		} catch (IllegalAccessException e) {
 		}
-		VistaLogin vistaLogin = new VistaLogin();
-		Biblioteca biblioteca = new Biblioteca();
-		ControllerLogin controller = new ControllerLogin(vistaLogin,biblioteca);
 		
+		Biblioteca biblioteca = new Biblioteca();
+		VistaLogin vistalogin1 = new VistaLogin();
+		ControllerLogin controller = new ControllerLogin(vistalogin1,biblioteca);
+		VistaBibliotecaU vistaLogin = new VistaBibliotecaU(controller);
+	
 	}
 
 }

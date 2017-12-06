@@ -2,13 +2,14 @@ package entity;
 //wtfwtfwtfwtf
 import java.util.ArrayList;
 
+
 public class Biblioteca {
 	private ArrayList<Usuario> usuarios;
 	
 	public Biblioteca(){
 		this.usuarios = new ArrayList<Usuario>();
 	}
-	
+	 
 	
 	public void agregarUsuario(Usuario pUsuarios) {
 		this.usuarios.add(pUsuarios);
@@ -48,6 +49,19 @@ public class Biblioteca {
 					usuarios.get(a).setContrasena(nueva);
 				}
 		}
+	}
+	
+	
+	public Usuario getEstudiante(int pIndex) {
+		return (Usuario) usuarios.get(pIndex);
+	}
+
+	public ArrayList<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+	public void setlistaDeEstudiantes(ArrayList<Usuario> pUsuarios) {
+		this.usuarios = pUsuarios;
 	}
 
 	
