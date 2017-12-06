@@ -9,10 +9,12 @@ import javax.swing.*;
 public class VistaLogin extends JDialog {
 	
 	//Attributos
-	public JDialog dialog;
+	public JSplitPane splitPane;
+	public JFrame dialog;
 	public JDialog dialog2;
 	public JDialog dialog3;
 	public JLabel fecha;
+	public JLabel imagen;
 	public JLabel labelUsuario;
 	public JLabel labelContrasena;
 	public JLabel labelOlvido;
@@ -51,16 +53,20 @@ public class VistaLogin extends JDialog {
 	public JPanel panel2C;
 	public JPanel panel3;
 	public JPanel nueva;
+	public JPanel imagenPanel;
 	
 	
 	public VistaLogin() {
 		
 	//Componentes
-	this.dialog = new JDialog();
+	splitPane = new JSplitPane();
+	this.imagen = new JLabel(); 
+	this.dialog = new JFrame();
 	this.panel = new JPanel();
 	this.dialog2 = new JDialog();
 	this.panel2A = new JPanel();
 	this.panel2B = new JPanel();
+	this.imagenPanel = new JPanel();
 	this.panel2C = new JPanel();
 	this.dialog3 = new JDialog();
 	this.panel3 = new JPanel();
@@ -94,11 +100,14 @@ public class VistaLogin extends JDialog {
 	this.crear = new JButton("Crear");
 	this.olvido = new JButton("Verificar");
 	this.olvidoUsuario = new JButton("Buscar");
-	
+	imagen.setIcon(new ImageIcon("src/img/logo-libreria.png"));
+
+        
 	
 	
 	//dialog login
-
+	imagenPanel.add(imagen);
+	panel.add(imagenPanel);
 	panel.add(labelUsuario);
 	panel.add(textFieldUsuario);
 	
@@ -110,10 +119,15 @@ public class VistaLogin extends JDialog {
 	panel.add(labelOlvido);
 	panel.add(labelNuevo);
 	panel.setLayout(new GridLayout(4, 2));
+	 
+	 splitPane.setOrientation(JSplitPane.VERTICAL_SPLIT);
+     splitPane.setDividerLocation(100);                    
+     splitPane.setTopComponent(imagenPanel);                  
+     splitPane.setBottomComponent(panel);  
 	dialog.pack();
 	dialog.setLocationRelativeTo(null);
 	dialog.setTitle("Inicio de Sesion");
-	dialog.setContentPane(panel);
+	dialog.setContentPane(splitPane);
 	dialog.setVisible(true);
 	dialog.pack();
 	
